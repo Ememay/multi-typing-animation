@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: crimson;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.parenttypingarea {
+    position: relative;
+    font-size: 55px;
+}
+
+#typingarea::before {
+    content: '|';
+    position: absolute;
+    color: white;
+    left: -10px;
+    width: 3px;
+    animation: typinglineanimation 0.5s infinite alternate;
+}
+
+@keyframes typinglineanimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .parenttypingarea {
+        font-size: 30px;
+    }
+}
